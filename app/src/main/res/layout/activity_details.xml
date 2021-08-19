@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DetailsActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:text="Country"
+        android:textAllCaps="true"
+        android:id="@+id/countryName"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_gravity="center_horizontal"
+        tools:ignore="HardcodedText" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="Continent"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:id="@+id/tvContinent"
+            android:textAlignment="textEnd"
+            android:textSize="20sp"
+            android:textColor="@color/color_one"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-light"
+            android:layout_alignParentRight="true"
+            tools:ignore="HardcodedText"
+            android:gravity="end"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_two"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="Updated"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tvUpdated"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:fontFamily="sans-serif-light"
+            android:gravity="end"
+            android:text="0"
+            android:textAlignment="textEnd"
+            android:textColor="@color/color_one"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/color_two" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="Population"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:id="@+id/tvPopulation"
+            android:textAlignment="textEnd"
+            android:textSize="20sp"
+            android:textColor="@color/color_one"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-light"
+            android:layout_alignParentRight="true"
+            tools:ignore="HardcodedText"
+            android:gravity="end"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_two"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="Tests"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tvTest"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:fontFamily="sans-serif-light"
+            android:gravity="end"
+            android:text="0"
+            android:textAlignment="textEnd"
+            android:textColor="@color/color_one"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/color_two" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="Cases"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:id="@+id/tvCases"
+            android:textAlignment="textEnd"
+            android:textSize="20sp"
+            android:textColor="@color/color_one"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-light"
+            android:layout_alignParentRight="true"
+            tools:ignore="HardcodedText"
+            android:gravity="end"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_two"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="Recovered"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText"/>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:id="@+id/tvRecovered"
+            android:textAlignment="textEnd"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText"
+            android:gravity="end"
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/color_one"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-light"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_two"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="Critical"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText"/>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:id="@+id/tvCritical"
+            android:textAlignment="textEnd"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText"
+            android:textColor="@color/color_one"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-light"
+            android:layout_alignParentRight="true"
+            android:gravity="end"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_two"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="Active"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText"/>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:id="@+id/tvActive"
+            android:textAlignment="textEnd"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText"
+            android:textColor="@color/color_one"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-light"
+            android:layout_alignParentRight="true"
+            android:gravity="end"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_two"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="Today Cases"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText"/>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:id="@+id/tvTodayCases"
+            android:textAlignment="textEnd"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText"
+            android:textColor="@color/color_one"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-light"
+            android:layout_alignParentRight="true"
+            android:gravity="end"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_two"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="Today Recovered"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tvTodayRecovered"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:fontFamily="sans-serif-light"
+            android:gravity="end"
+            android:text="0"
+            android:textAlignment="textEnd"
+            android:textColor="@color/color_one"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/color_two" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="Total Deaths"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText"/>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:id="@+id/tvTotalDeaths"
+            android:textAlignment="textEnd"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText"
+
+            android:textColor="@color/color_one"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-light"
+            android:layout_alignParentRight="true"
+            android:gravity="end"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_two"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="Today Deaths"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText"/>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:id="@+id/tvTodayDeaths"
+            android:textAlignment="textEnd"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText"
+            android:textColor="@color/color_one"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-light"
+            android:layout_alignParentRight="true"
+            android:gravity="end"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_two"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+
+</LinearLayout>

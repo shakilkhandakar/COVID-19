@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    tools:ignore="UseCompoundDrawables">
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:id="@+id/imageFlag"
+        android:padding="5dp"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvCountryName"
+        android:layout_gravity="center_vertical"
+        android:text="Country Name"
+        android:layout_toRightOf="@id/imageFlag"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:paddingLeft="15dp"
+        android:layout_marginTop="12dp"
+        tools:ignore="HardcodedText,RtlSymmetry"
+        android:paddingStart="15dp"
+        android:layout_toEndOf="@id/imageFlag" />
+
+<View
+    android:layout_width="match_parent"
+    android:layout_height="2dp"
+    android:background="#D8D6D6"
+    android:layout_below="@id/imageFlag"
+    android:layout_marginLeft="15dp"
+    android:layout_toRightOf="@id/imageFlag"
+    android:layout_toEndOf="@id/imageFlag"
+    android:layout_marginStart="15dp" />
+</RelativeLayout>

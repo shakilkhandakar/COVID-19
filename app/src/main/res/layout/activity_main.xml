@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    tools:context=".MainActivity">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshId"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/graphCardView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:cardCornerRadius="7dp"
+                app:cardElevation="10dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <org.eazegraph.lib.charts.PieChart
+                        android:id="@+id/pieChart"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:padding="20dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:paddingLeft="20dp"
+                        tools:ignore="RtlHardcoded,RtlSymmetry">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="15dp"
+                            android:gravity="center_vertical">
+
+                            <View
+                                android:layout_width="15dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/cases" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="Total Cases"
+                                tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="15dp"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center_vertical">
+
+                            <View
+                                android:layout_width="15dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/recovered" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="Recovered"
+                                tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="15dp"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center_vertical">
+
+                            <View
+                                android:layout_width="15dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/deaths" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="Deaths"
+                                tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="15dp"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center_vertical">
+
+                            <View
+                                android:layout_width="15dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/active" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="Active"
+                                tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/contentCardView"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_below="@id/graphCardView"
+                app:cardCornerRadius="7dp"
+                app:cardElevation="10dp"
+                app:cardUseCompatPadding="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.leo.simplearcloader.SimpleArcLoader
+                        android:id="@+id/arcLoader"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_centerInParent="true"
+                        app:arc_style="complete_arc" />
+
+                    <TextView
+                        android:id="@+id/global"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginLeft="25dp"
+                        android:gravity="center_horizontal"
+                        android:paddingTop="5dp"
+                        android:text="global status"
+                        android:textAllCaps="true"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
+
+                    <ScrollView
+                        android:id="@+id/scrollView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/global"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="25dp"
+                                android:layout_marginBottom="10dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-light"
+                                    android:text="Updated"
+                                    android:textSize="20sp"
+                                    tools:ignore="HardcodedText" />
+
+                                <TextView
+                                    android:id="@+id/tvUpdated"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:fontFamily="sans-serif-light"
+                                    android:gravity="end"
+                                    android:text="0"
+                                    android:textAlignment="textEnd"
+                                    android:textColor="@color/color_one"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+
+                            </RelativeLayout>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@color/color_two" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="25dp"
+                                android:layout_marginBottom="10dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-light"
+                                    android:text="Population"
+                                    android:textSize="20sp"
+                                    tools:ignore="HardcodedText" />
+
+                                <TextView
+                                    android:id="@+id/tvPopulation"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:fontFamily="sans-serif-light"
+                                    android:gravity="end"
+                                    android:text="0"
+                                    android:textAlignment="textEnd"
+                                    android:textColor="@color/color_one"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+
+                            </RelativeLayout>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@color/color_two" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="25dp"
+                                android:layout_marginBottom="10dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-light"
+                                    android:text="Tests"
+                                    android:textSize="20sp"
+                                    tools:ignore="HardcodedText" />
+
+                                <TextView
+                                    android:id="@+id/tvTest"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:fontFamily="sans-serif-light"
+                                    android:gravity="end"
+                                    android:text="0"
+                                    android:textAlignment="textEnd"
+                                    android:textColor="@color/color_one"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+
+                            </RelativeLayout>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@color/color_two" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="25dp"
+                                android:layout_marginBottom="10dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-light"
+                                    android:text="Cases"
+                                    android:textSize="20sp"
+                                    tools:ignore="HardcodedText" />
+
+                                <TextView
+                                    android:id="@+id/tvCases"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:fontFamily="sans-serif-light"
+                                    android:gravity="end"
+                                    android:text="0"
+                                    android:textAlignment="textEnd"
+                                    android:textColor="@color/color_one"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+
+                            </RelativeLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@color/color_two" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="25dp"
+                                android:layout_marginBottom="10dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-light"
+                                    android:text="Recovered"
+                                    android:textSize="20sp"
+                                    tools:ignore="HardcodedText" />
+
+                                <TextView
+                                    android:id="@+id/tvRecovered"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:fontFamily="sans-serif-light"
+                                    android:gravity="end"
+                                    android:text="0"
+                                    android:textAlignment="textEnd"
+                                    android:textColor="@color/color_one"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+
+                            </RelativeLayout>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@color/color_two" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="25dp"
+                                android:layout_marginBottom="10dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-light"
+                                    android:text="Critical"
+                                    android:textSize="20sp"
+                                    tools:ignore="HardcodedText" />
+
+                                <TextView
+                                    android:id="@+id/tvCritical"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:fontFamily="sans-serif-light"
+                                    android:gravity="end"
+                                    android:text="0"
+                                    android:textAlignment="textEnd"
+                                    android:textColor="@color/color_one"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+
+                            </RelativeLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@color/color_two" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="25dp"
+                                android:layout_marginBottom="10dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-light"
+                                    android:text="Active"
+                                    android:textSize="20sp"
+                                    tools:ignore="HardcodedText" />
+
+                                <TextView
+                                    android:id="@+id/tvActive"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:fontFamily="sans-serif-light"
+                                    android:gravity="end"
+                                    android:text="0"
+                                    android:textAlignment="textEnd"
+                                    android:textColor="@color/color_one"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+
+                            </RelativeLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@color/color_two" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="25dp"
+                                android:layout_marginBottom="10dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-light"
+                                    android:text="Today Cases"
+                                    android:textSize="20sp"
+                                    tools:ignore="HardcodedText" />
+
+                                <TextView
+                                    android:id="@+id/tvTodayCases"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:fontFamily="sans-serif-light"
+                                    android:gravity="end"
+                                    android:text="0"
+                                    android:textAlignment="textEnd"
+                                    android:textColor="@color/color_one"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+
+                            </RelativeLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@color/color_two" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="25dp"
+                                android:layout_marginBottom="10dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-light"
+                                    android:text="Today Recovered"
+                                    android:textSize="20sp"
+                                    tools:ignore="HardcodedText" />
+
+                                <TextView
+                                    android:id="@+id/tvTodayRecovered"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:fontFamily="sans-serif-light"
+                                    android:gravity="end"
+                                    android:text="0"
+                                    android:textAlignment="textEnd"
+                                    android:textColor="@color/color_one"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+
+                            </RelativeLayout>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@color/color_two" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="25dp"
+                                android:layout_marginBottom="10dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-light"
+                                    android:text="Total Deaths"
+                                    android:textSize="20sp"
+                                    tools:ignore="HardcodedText" />
+
+                                <TextView
+                                    android:id="@+id/tvTotalDeaths"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:fontFamily="sans-serif-light"
+                                    android:gravity="end"
+
+                                    android:text="0"
+                                    android:textAlignment="textEnd"
+                                    android:textColor="@color/color_one"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+
+                            </RelativeLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@color/color_two" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="25dp"
+                                android:layout_marginBottom="10dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-light"
+                                    android:text="Today Deaths"
+                                    android:textSize="20sp"
+                                    tools:ignore="HardcodedText" />
+
+                                <TextView
+                                    android:id="@+id/tvTodayDeaths"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:fontFamily="sans-serif-light"
+                                    android:gravity="end"
+                                    android:text="0"
+                                    android:textAlignment="textEnd"
+                                    android:textColor="@color/color_one"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+
+                            </RelativeLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@color/color_two" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="25dp"
+                                android:layout_marginBottom="10dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-light"
+                                    android:text="Affected Countries"
+                                    android:textSize="20sp"
+                                    tools:ignore="HardcodedText" />
+
+                                <TextView
+                                    android:id="@+id/tvAffectedCountries"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:fontFamily="sans-serif-light"
+                                    android:gravity="end"
+                                    android:text="0"
+                                    android:textAlignment="textEnd"
+                                    android:textColor="@color/color_one"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+
+                            </RelativeLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@color/color_two" />
+
+                        </LinearLayout>
+
+                    </ScrollView>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/trackerButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/contentCardView"
+                android:layout_centerHorizontal="true"
+                android:backgroundTint="#C51162"
+                android:onClick="goToTrackCountry"
+                android:text="Individual Countries"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                tools:ignore="HardcodedText"
+                tools:targetApi="lollipop" />
+        </RelativeLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</RelativeLayout>
